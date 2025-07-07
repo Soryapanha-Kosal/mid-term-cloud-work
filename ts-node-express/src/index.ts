@@ -81,5 +81,8 @@ app.listen(port, () => {
   console.log(
     `Proxy server running at ${hostAddress}`
   );
+
+  console.log("Loaded PORT from .env:", process.env.PORT);
+
 });
 
