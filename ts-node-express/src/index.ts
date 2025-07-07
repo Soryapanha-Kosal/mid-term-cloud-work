@@ -42,7 +42,7 @@ function authRole(role: string) {
 
 
 const proxyMiddleware = createProxyMiddleware({
-  target: "http://localhost:5005/inventory",
+  target: "http://54.227.73.99:5005/inventory",
   changeOrigin: true,
   ws: true,
 });
@@ -51,22 +51,22 @@ app.use("/inventory",authToken,authRole("club_leader"), proxyMiddleware);
 
 
 app.use('/club', createProxyMiddleware({
-  target: 'http://localhost:5002/club',
+  target: 'http://54.197.47.51:5002/club',
   changeOrigin: true,
 }));
 
 app.use('/auth', createProxyMiddleware({
-  target: 'http://localhost:5001/',
+  target: 'http://18.234.65.70:5001/',
   changeOrigin: true,
 }));
 
 app.use('/event', authToken, authRole('club_leader'), createProxyMiddleware({
-  target: 'http://localhost:5003/event',
+  target: 'http://54.197.33.111:5003/event',
   changeOrigin: true,
 }));
 
 app.use('/budget', authToken, authRole('club_leader'), createProxyMiddleware({
-  target: 'http://127.0.0.1:5004/budget',
+  target: 'http://44.220.143.93:5004/budget',
   changeOrigin: true,
 }));
 
